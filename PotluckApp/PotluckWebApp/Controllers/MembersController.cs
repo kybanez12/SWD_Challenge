@@ -10,14 +10,19 @@ using PotluckWebApp.Models;
 
 namespace PotluckWebApp.Controllers
 {
+    [Authorize]
     public class MembersController : Controller
     {
         private PotDBEntities db = new PotDBEntities();
+        MemberViewModel mView = new MemberViewModel();
 
         // GET: Members
         public ActionResult Index()
         {
-            return View(db.Members.ToList());
+            mView.Members = db.Members.ToList();
+            mView.Potlucks = db.Potlucks.ToList();
+            return View(mView);
+            
         }
 
         // GET: Members/Details/5

@@ -9,6 +9,7 @@ namespace PotluckWebApp.Controllers
     public class HomeController : Controller
     {
         [RequireHttps]
+        [Authorize]
         public ActionResult Index()
         {
             return View();

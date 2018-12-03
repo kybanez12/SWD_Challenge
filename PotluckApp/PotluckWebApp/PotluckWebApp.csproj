@@ -215,6 +215,7 @@
     <Compile Include="Models\Member.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\MemberViewModel.cs" />
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -320,6 +321,7 @@
     <Content Include="Views\Potlucks\Details.cshtml" />
     <Content Include="Views\Potlucks\Edit.cshtml" />
     <Content Include="Views\Potlucks\Index.cshtml" />
+    <Content Include="Views\Potlucks\PastPotlucks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

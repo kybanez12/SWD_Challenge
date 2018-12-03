@@ -1,15 +1,13 @@
 ﻿@model IEnumerable<PotluckWebApp.Models.Potluck>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "PastPotlucks";
 }
 
-<h2>Upcoming potlucks</h2>
+<h2>Previous Potlucks</h2>
 
 <p>
-    @Html.ActionLink("View previous potlucks", "PastPotlucks") |
-    @Html.ActionLink("Create New", "Create") |
-    @Html.ActionLink("View members", "Index", "Members")
+    @Html.ActionLink("Back to upcoming", "Index")
 </p>
 <table class="table">
     <tr>

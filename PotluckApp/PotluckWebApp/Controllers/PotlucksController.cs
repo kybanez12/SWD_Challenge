@@ -10,15 +10,33 @@ using PotluckWebApp.Models;
 
 namespace PotluckWebApp.Controllers
 {
+    [Authorize]
     public class PotlucksController : Controller
     {
         private PotDBEntities db = new PotDBEntities();
 
+        
         // GET: Potlucks
         public ActionResult Index()
         {
-            var potlucks = db.Potlucks.Include(p => p.Member);
-            return View(potlucks.ToList());
+            var datenow = DateTime.Now;
+            var potlucks = db.Potlucks.Where(s => s.Date > datenow);
+            foreach (var item in potlucks)
+            {
+                item.Date.ToShortDateString();
+            }
+            return View(potlucks);
+        }
+
+        public ActionResult PastPotlucks()
+        {
+            var datenow = DateTime.Now;
+            var potlucks = db.Potlucks.Where(s => s.Date < datenow);
+            foreach (var item in potlucks)
+            {
+                item.Date.ToShortDateString();
+            }
+            return View(potlucks);
         }
 
         // GET: Potlucks/Details/5
